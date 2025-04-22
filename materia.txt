@@ -1,0 +1,6 @@
+1. Configurar .env: Agrega los datos de conexión a la base de datos en el archivo .env.
+2. Migrar base de datos: Ejecuta "php artisan migrate" para aplicar las migraciones.
+3. Levantar Laravel: Inicia el servidor con "php artisan serve".
+
+Artisan
+Entre las herramientas que Laravel proporciona para el desarrollo de aplicaciones, se encuentra Artisan, la interfaz de línea de comandos (CLI, por sus siglas en inglés: Command-Line Interface). Artisan es una herramienta poderosa que permite a los desarrolladores interactuar con la aplicación a través de comandos de texto simples. Mediante estos comandos, los desarrolladores pueden realizar diversas tareas, como la creación de controladores, migraciones de bases de datos, pruebas, y muchas otras operaciones esenciales para el desarrollo de una aplicación.
