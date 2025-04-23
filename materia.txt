@@ -2,5 +2,51 @@
 2. Migrar base de datos: Ejecuta "php artisan migrate" para aplicar las migraciones.
 3. Levantar Laravel: Inicia el servidor con "php artisan serve".
 
+
+/*
+
+Restauración de dependencias tras clonar el proyecto
+Al clonar un proyecto Laravel desde un repositorio, es necesario reinstalar las dependencias para que el entorno funcione correctamente. Para ello, dentro de la carpeta del proyecto, ejecuta el siguiente comando:
+    composer install
+
+*/
+
+
 Artisan
 Entre las herramientas que Laravel proporciona para el desarrollo de aplicaciones, se encuentra Artisan, la interfaz de línea de comandos (CLI, por sus siglas en inglés: Command-Line Interface). Artisan es una herramienta poderosa que permite a los desarrolladores interactuar con la aplicación a través de comandos de texto simples. Mediante estos comandos, los desarrolladores pueden realizar diversas tareas, como la creación de controladores, migraciones de bases de datos, pruebas, y muchas otras operaciones esenciales para el desarrollo de una aplicación.
+
+Creación de un modelo en Laravel con Artisan
+Para generar un modelo en Laravel utilizando Artisan, debes asegurarte de que estás dentro del directorio del proyecto.
+El nombre del modelo debe comenzar con mayúscula y seguir la convención de Singular (por ejemplo, "Cliente" en lugar de "Clientes").
+php artisan make:model Cliente
+
+
+Opciones adicionales: Puedes incluir una migración al crear el modelo con el flag -m:
+php artisan make:model Cliente -m
+
+Esto generará el modelo junto con un archivo de migración.
+Si necesitas también un factory, seeder y controlador, puedes usar el flag -a:
+php artisan make:model Cliente -a
+
+Creación de un controlador en Laravel con Artisan
+El nombre del controlador debe estar en Singular y siguiendo la convención de Laravel, generalmente con el sufijo Controller.
+php artisan make:controller ClienteController
+
+Opciones adicionales:
+- Crear un controlador tipo recurso para manejar operaciones CRUD de manera estándar:
+php artisan make:controller ClienteController --resource
+
+Esto generará métodos predefinidos como index(), store(), update(), etc.
+- Asociar el controlador a un modelo automáticamente:
+
+php artisan make:controller ClienteController --model=Cliente
+
+Este último comando vincula el controlador con el modelo Cliente, simplificando la lógica en el código.
+
+💡 Consejos Extra:
+- Usa nombres en Singular, excepto cuando sean colecciones (ClientesController podría ser válido en algunos casos).
+- Si trabajas con API, puedes generar un controlador específico:
+
+php artisan make:controller ClienteController --api
+
+Esto excluye los métodos create() y edit(), ya que no son necesarios en APIs REST.

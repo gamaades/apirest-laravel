@@ -22,32 +22,28 @@ services:
 
   mysql:
     image: mysql:5.7
+    container_name: mysql
     environment:
       - MYSQL_DATABASE=apirest
-      - MYSQL_ROOT_PASSWORD=admin123
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin123
+      - MYSQL_ROOT_PASSWORD=root123
     ports:
       - 3306:3306
     volumes:
       - ./mysql_data:/var/lib/mysql
-    networks:
-      - app-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
         - PMA_HOST=mysql
-        - PMA_USER=root
+        - PMA_USER=admin
         - PMA_PASSWORD=admin123
     ports:
         - 8080:80
     depends_on:
         - mysql
-    networks:
-      - app-network
 
-networks:
-  app-network:
-    driver: bridge
 
 # levantamos docker con el siguiente comando
 # $ docker-compose up -d postgres
