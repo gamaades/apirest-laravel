@@ -1,0 +1,13 @@
+### default
+GET http://127.0.0.1:8000
+
+
+### Register a new user""
+POST http://127.0.0.1:8000/registro
+content-type: application/json
+
+{
+    "primer_nombre": "Gustavo",
+    "primer_apellido": "Mañán",
+    "email": "gmanan@gmail.com"
+}

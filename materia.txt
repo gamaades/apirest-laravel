@@ -50,3 +50,7 @@ Este último comando vincula el controlador con el modelo Cliente, simplificando
 php artisan make:controller ClienteController --api
 
 Esto excluye los métodos create() y edit(), ya que no son necesarios en APIs REST.
+
+
+Lista todos los metodos que puedo agregar a la ruta
+    php artisan route:list

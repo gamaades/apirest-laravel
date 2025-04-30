@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Clientes extends Model
+class Cliente extends Model
 {
     // Conectandonos a la tabla clientes
-    protected $table = 'Clientes';
+    protected $table = 'clientes';
 }
